@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>interactive-comment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-gray-100">
+    <div class="flex w-full flex flex-col gap-4 lg:w-6/12 justify-center mx-auto my-10">
+        <ul id="commentBox">
+            <li class="comments" >
+                <div class="comment">
+                    <div class="flex justify-between items-center" >
+                        <div class="flex items-center pb-2">
+                            <img  src="./images/avatars/image-amyrobson.png" alt="" class="w-2/12 comment-img">
+                            <span  class="mx-4 comment-name">Sara</span>
+                            <span  class="text-gray-600 comment-date">1 month ago</span>
+                        </div>
+                        <div id="btns">
+                            <button onclick="replyComment(this)" id="comment-img" class="flex text-blue-800"><img src="./images/icon-reply.svg" alt="" class="px-2 w-full h-auto object-contain pt-1"> Reply</button>
+                        </div>
+                    </div>
+                    <div class="commentBody">
+                        <p class="commentText whitespace-pre-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="flex mb-4 replyBox">
+                    <div class="w-[2px] self-stretch bg-gray-300 mx-4 rounded-lg"></div>
+                    <ul class="w-full"></ul>
+                </div>
+            </li>
+            <li class="comments">
+                <div class="comment">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center pb-2">
+                            <img src="./images/avatars/image-ramsesmiron.png" alt="" class="w-2/12 comment-img">
+                            <span class="comment-name" class="mx-4">Amir</span>
+                            <span class="text-gray-600 comment-date">2 week ago</span>
+                        </div>
+                        <div class="">
+                            <button onclick="replyComment(this)" class="flex text-blue-800"><img src="./images/icon-reply.svg" alt="" class="px-2 w-full h-auto object-contain pt-1"> Reply</button>
+                        </div>
+                    </div>
+                    <div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="flex mb-4 replyBox">
+                    <div class="w-[2px] self-stretch bg-gray-300 mx-4 rounded-lg"></div>
+                    <ul>
+                        <div class="comment">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center pb-2">
+                                    <img src="./images/avatars/38FAA951-1967-4BD6-91BA-636ECD85CC9E.jpeg" alt="" class="w-3/12 lg:w-1/12 rounded-full">
+                                    <span class="ml-4">Sasan</span>
+                                    <span class="mx-2 lg:mx-4 bg-blue-800 text-white px-1 rounded-lg">You</span>
+                                    <span class="text-gray-600">Today</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <button  onclick="openModal(this)" class="flex mb-1 text-pink-600 mx-6"><img src="./images/icon-delete.svg" alt="" class="px-1 lg:px-2 w-full h-auto object-contain py-auto">Delete</button>
+                                    <button onclick="editComment(this)" class="flex mb-1 text-blue-800 pr-2"><img src="./images/icon-edit.svg" alt="" class="px-1  lg:px-2 w-full h-auto object-contain py-auto">Edit</button>
+                                </div>
+                            </div>
+                            <div class="commentBody">
+                                <a class="inline text-blue-700 cursor-pointer">@Amir</a>
+                                <p class="commentText inline ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                            </div>
+                            
+                        </div>
+                    </ul>
+                </div>
+            </li>
+            <li class="comments" >
+                <div class="comment">
+                    <div class="flex justify-between items-center" >
+                        <div class="flex items-center pb-2">
+                            <img  src="./images/avatars/image-maxblagun.png" alt="" class="w-2/12 comment-img">
+                            <span class="mx-4 comment-name">Hossein</span>
+                            <span class="text-gray-600 comment-date">4 Day ago</span>
+                        </div>
+                        <div id="btns">
+                            <button onclick="replyComment(this)" id="comment-img" class="flex text-blue-800"><img src="./images/icon-reply.svg" alt="" class="px-2 w-full h-auto object-contain pt-1"> Reply</button>
+                        </div>
+                    </div>
+                    <div class="commentBody">
+                        <p class="commentText whitespace-pre-line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                    
+                </div>
+                <div class="flex mb-4 replyBox">
+                    <div class="w-[2px] self-stretch bg-gray-300 mx-4 rounded-lg"></div>
+                    <ul class="w-full"></ul>
+                </div>
+            </li>
+
+        </ul>
+
+        <div class=" flex justify-between items-start sendComment ">
+            <img src="./images/avatars/38FAA951-1967-4BD6-91BA-636ECD85CC9E.jpeg" alt="" class="w-10 rounded-full">
+            <textarea name="" id="input-comment" class="resize-none w-full h-20 mx-4 p-2 border-2 rounded-sm transition focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none" placeholder="Add a comment..."></textarea>
+            <button onclick="addComment()" class="bg-blue-800 text-white py-2 px-6 rounded-lg text-sm" id="add-comment">SEND</button>
+        </div>
+    </div>
+
+    <div id="deleteCommentModal" class="modal">
+        <div class="modal-content">
+            <div>
+                <h2 class="text-xl">Delete Comment</h2>
+                <p class="text-gray-500">are sure you want to delete this comment?this will be delete comment and can't be undone</p>
+            </div>
+            <div class="flex justify-between py-2 px-5">
+                <button onclick="dontDelete()" class="bg-gray-700 text-white mr-1 p-2 rounded-lg">NO,CANCLE</button>
+                <button onclick="deleteComment()" class="bg-red-500 text-white p-2 rounded-lg">YES,DELETE</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
